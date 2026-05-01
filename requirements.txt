@@ -1,0 +1,20 @@
+asgiref==3.11.1
+astroid==4.0.4
+certifi==2026.4.22
+charset-normalizer==3.4.7
+dill==0.4.1
+Django==6.0.4
+djangorestframework==3.17.1
+idna==3.13
+iqoptionapi @ git+https://github.com/iqoptionapi/iqoptionapi.git@8a903cc094a74af1ed935a56a2d6b5a9ed3319d7
+isort==8.0.1
+mccabe==0.7.0
+platformdirs==4.9.6
+psycopg2-binary==2.9.12
+pylint==4.0.5
+requests==2.33.1
+six==1.17.0
+sqlparse==0.5.5
+tomlkit==0.14.0
+urllib3==2.6.3
+websocket-client==0.56.0

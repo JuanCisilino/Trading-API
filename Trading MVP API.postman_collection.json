@@ -1,0 +1,187 @@
+{
+  "info": {
+    "_postman_id": "1897c901-e66c-4b80-8443-c7e23abd860c",
+    "name": "Trading MVP API",
+    "description": "MVP trading API con IQ Option",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17750597"
+  },
+  "item": [
+    {
+      "name": "Execute Trade (PRACTICE)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"asset\": \"EURUSD\",\n  \"direction\": \"call\",\n  \"amount\": 10,\n  \"mode\": \"PRACTICE\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/trades/execute",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "trades",
+            "execute"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Execute Trade (REAL)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"asset\": \"EURUSD\",\n  \"direction\": \"call\",\n  \"amount\": 10,\n  \"mode\": \"REAL\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/trades/execute",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "trades",
+            "execute"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Stats (PRACTICE)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/stats?mode=PRACTICE",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "stats"
+          ],
+          "query": [
+            {
+              "key": "mode",
+              "value": "PRACTICE"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Stats (REAL)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/stats?mode=REAL",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "stats"
+          ],
+          "query": [
+            {
+              "key": "mode",
+              "value": "REAL"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Trades History",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/trades?mode=PRACTICE",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "trades"
+          ],
+          "query": [
+            {
+              "key": "mode",
+              "value": "PRACTICE"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Balance",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/balance",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "balance"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
