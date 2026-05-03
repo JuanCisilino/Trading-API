@@ -20,13 +20,16 @@ class IQService:
         status, trade_id = self.api.buy(amount, asset, direction, 1)
 
         if not status:
-            return {"result": "error", "profit": 0}
+            return {"result": "error", "profit": 0, "msg": "buy failed"}
 
-        result = self.api.check_win_v4(trade_id)
+        try:
+            result = self.api.check_win_v4(trade_id)
+        except Exception as e:
+            return {"result": "error", "profit": 0, "msg": str(e)}
 
         if result > 0:
             return {"result": "win", "profit": result}
         elif result < 0:
             return {"result": "loss", "profit": result}
         else:
-            return {"result": "error", "profit": 0}
+            return {"result": "draw", "profit": 0}

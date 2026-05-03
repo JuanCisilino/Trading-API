@@ -34,7 +34,10 @@ def execute_trade_view(request):
     try:
         asset = request.data.get("asset", "EURUSD")
         direction = request.data.get("direction", "call")
-        amount = float(request.data.get("amount", 10))
+        try:
+            amount = float(request.data.get("amount", 10))
+        except:
+            return Response({"error": "Invalid amount"}, status=400)
         mode = request.data.get("mode", "PRACTICE")
 
         trade = Trade.objects.create(
@@ -45,9 +48,20 @@ def execute_trade_view(request):
             mode=mode
         )
 
+        if direction not in ["call", "put"]:
+            return Response({"error": "Invalid direction"}, status=400)
+
         iq = IQService(mode=mode)
 
-        result = iq.execute_trade(asset, direction, amount)
+        try:
+            result = iq.execute_trade(asset, direction, amount)
+        except Exception as e:
+            trade.status = "error"
+            trade.save()
+
+            return Response({
+                "error": str(e)
+            }, status=500)
 
         trade.result = result["result"]
         trade.profit = result["profit"]
